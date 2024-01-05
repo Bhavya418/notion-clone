@@ -1,0 +1,11 @@
+{
+    "editor.fontFamily": "'Fira Code'",
+    "editor.fontSize": 16,
+    "editor.lineHeight": 25,
+    "editor.fontLigatures": true,
+    "editor.mouseWheelZoom": true,
+    "editor.rulers": [
+        80
+    ],
+    "editor.wordWrap": "wordWrapColumn"
+}

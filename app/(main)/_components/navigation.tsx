@@ -16,17 +16,18 @@ import { useMutation } from "convex/react";
 import { toast } from "sonner";
 
 import {Popover,PopoverTrigger, PopoverContent} from "@/components/ui/popover"
-
+import { useSearch } from "@/hooks/use-search";
 import { cn } from "@/lib/utils";
 import { api } from "@/convex/_generated/api";
 
 import { UserItem } from "./user-item";
+import {TrashBox} from "./trash-box"
 import { Item } from "./item";
 import { DocumentList } from "./document-list";
 import from from './../../../.next/server/app/(main)/(routes)/documents/page';
 
 export const Navigation = () => {
-  
+  const search = useSearch();
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const create = useMutation(api.documents.create);
@@ -149,7 +150,7 @@ export const Navigation = () => {
             label="Search"
             icon={Search}
             isSearch
-            onClick={()=>{}}
+            onClick={search.onOpen}
           />
           <Item
             label="Settings"
@@ -176,7 +177,7 @@ export const Navigation = () => {
             <PopoverContent 
             className ="p-0 w-72"
             side={isMobile? "bottom":"right"}>
-                <p>Trash Box</p>
+                <TrashBox/>
             </PopoverContent>
           </Popover>    
         </div>

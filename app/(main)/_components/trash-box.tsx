@@ -13,7 +13,7 @@ import { api } from "@/convex/_generated/api";
 
 import { Search,Undo,Trash } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { ConfirmModal } from "./confirm-modal";
+import { ConfirmModal } from "@/components/modals/confirm-modal";
 
 export const TrashBox = () => {
   const router = useRouter();
@@ -97,14 +97,14 @@ export const TrashBox = () => {
               <div 
               role="button"
               onClick={(e) => onRestore(e, document._id)}
-              className="rounded-sm p-2 hover:bg_neutral-200">
+              className="rounded-sm p-2 hover:bg_neutral-200 dark:hover:bg_neutral-600">
                 <Undo className="h-4 w-4 text-muted-foreground"/>
               </div>
 
               <ConfirmModal onConfirm={() => onRemove(document._id)}>
                 <div
                   role="button"
-                  className="rounded-sm p-2 hover:bg-neutral-200"
+                  className="rounded-sm p-2 hover:bg-neutral-200 dark:hover:bg_neutral-600"
                 >
                   <Trash className="h-4 w-4 text-muted-foreground" />
                 </div>

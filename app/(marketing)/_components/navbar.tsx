@@ -23,7 +23,7 @@ export const Navbar =()=>{
                {!isAuthenticated && !isLoading && (
                 <>
                     <SignInButton mode="modal">
-                        <Button variant="ghost" size="sm">
+                        <Button variant="ghost" size="sm" className="dark:text-white">
                             Login
                         </Button>
                     </SignInButton>
@@ -47,7 +47,10 @@ export const Navbar =()=>{
                         </UserButton>
                     </>
                )}
+               <div className="dark:text-white">
+
                 <ModeToggle/>
+               </div>
             </div>
         </div>
     );

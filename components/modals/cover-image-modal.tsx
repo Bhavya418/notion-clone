@@ -10,7 +10,7 @@ import {
   DialogHeader
 } from "@/components/ui/dialog";
 import { useCoverImage } from "@/hooks/use-cover-image";
-import { SingleImageDropzone } from "@/components/single-image-dropzone";
+import { SingleImageDropzone } from "../single-image-dropzon";
 import { useEdgeStore } from "@/lib/edgestore";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
@@ -36,7 +36,10 @@ export const CoverImageModal = () => {
       setFile(file);
 
       const res = await edgestore.publicFiles.upload({
-        file
+        file,
+        options:{
+            replaceTargetUrl:coverImage.url
+        }
       });
 
       await update({

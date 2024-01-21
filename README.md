@@ -1,4 +1,4 @@
-#Fullstack Notion Clone - Jotion using Next.js, React, Convex, Tailwind
+# Fullstack Notion Clone - Jotion using Next.js, React, Convex, Tailwind
 
 ![Alt text](image.png)
 Key Features:
